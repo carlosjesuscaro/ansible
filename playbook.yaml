@@ -1,0 +1,19 @@
+---
+- name: Test Playbook to Install ZSH
+  hosts: all
+  become: true  # This tells Ansible to use sudo
+
+  tasks:
+    - name: Ensure zsh is installed
+      ansible.builtin.package:
+        name: zsh
+        state: present
+
+    - name: Verify zsh installation
+      ansible.builtin.command: zsh --version
+      register: zsh_version
+      changed_when: false
+
+    - name: Show zsh version in logs
+      ansible.builtin.debug:
+        msg: "ZSH is installed and the version is {{ zsh_version.stdout }}"
