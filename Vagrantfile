@@ -75,9 +75,7 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    apt-get install -y
-    apt-get install toilet zsh git curl expect vim -y
-    toilet MachineX
+    apt update && apt upgrade -y
+    apt install curl git vim ansible -y
   SHELL
 end
