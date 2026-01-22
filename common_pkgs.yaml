@@ -1,0 +1,19 @@
+common_packages:
+    - curl
+    - vim
+    - git
+    - htop
+    - nala
+    - bat
+    - fzf
+    - net-tools
+    - nmap
+    - ncdu
+    - ripgrep
+    - screenfetch
+    - tldr
+    - zip
+    - unzip
+    - wget
+    - xclip
+    - zsh

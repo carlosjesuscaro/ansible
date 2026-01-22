@@ -1,12 +1,14 @@
 ---
+
 - name: Test Playbook to Install ZSH
   hosts: all
   become: true  # This tells Ansible to use sudo
-
+  vars_files:
+    - common_pkgs.yaml
   tasks:
-    - name: Ensure zsh is installed
+    - name: Installing common packages
       ansible.builtin.package:
-        name: zsh
+        name: "{{ common_packages }}"
         state: present
 
     - name: Verify zsh installation
